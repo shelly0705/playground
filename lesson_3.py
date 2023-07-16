@@ -1,9 +1,10 @@
 # Lesson 3 - More functions
-def calculate_bmi(weight, height, name):
+def calculate_bmi(weight, height):
     height_in_meter = int(height) / 100
     height_square = height_in_meter**2
     bmi = int(weight) / height_square
     return bmi
+
 
 def ask_what_is_your_weight():
     print("What is your weight?")
