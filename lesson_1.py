@@ -1,4 +1,4 @@
-# Lesson 1 - `if-else` and `input` and `print`
+# Lesson 1 - `if-else`, `input` and `print`
 
 print("What is your age?")
 age = input()

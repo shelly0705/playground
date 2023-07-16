@@ -1,4 +1,4 @@
-# Lesson 4 - Loop
+# Lesson 5 - More loops
 def calculate_from_1_add_to_10():
     result = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10
     return result

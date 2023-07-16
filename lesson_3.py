@@ -1,3 +1,4 @@
+# Lesson 3 - More functions
 def calculate_bmi(weight, height, name):
     height_in_meter = int(height) / 100
     height_square = height_in_meter**2
