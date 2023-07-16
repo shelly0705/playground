@@ -114,10 +114,15 @@ def better_formula(end, except_1):
     return total
 
 
-def n_n_n_formula(n):
+def n_n_n_formula(n, except_1):
     total = ""
 
-    for x in range(2, n + 1):
+    if except_1:
+        start = 2
+    else:
+        start = 1
+
+    for x in range(start, n + 1):
         for y in range(1, n + 1):
             for z in range(1, n + 1):
                 partial = (
@@ -135,5 +140,18 @@ def n_n_n_formula(n):
     return total
 
 
-result = n_n_n_formula(9)
+# Ask the user what n does he want?
+print("What n do you want for n * n * n formula?")
+n = input()
+# Ask the user if he want to exclude "1"?
+print('Do you want to exclude "1"? (y/n)')
+char = input()
+if char == 'y':
+    except_1 = True
+else:
+    except_1 = False
+
+# Calculate the result with our `n_n_n_formula` and the `n`
+result = n_n_n_formula(n=int(n), except_1=except_1)
+# Print it
 print(result)
