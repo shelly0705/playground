@@ -114,5 +114,26 @@ def better_formula(end, except_1):
     return total
 
 
-result = better_formula(end=9, except_1=False)
+def n_n_n_formula(n):
+    total = ""
+
+    for x in range(2, n + 1):
+        for y in range(1, n + 1):
+            for z in range(1, n + 1):
+                partial = (
+                    str(x)
+                    + " * "
+                    + str(y)
+                    + " * "
+                    + str(z)
+                    + " = "
+                    + str(x * y * z)
+                    + "\n"
+                )
+                total = total + partial
+
+    return total
+
+
+result = n_n_n_formula(9)
 print(result)
