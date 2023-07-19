@@ -1,61 +1,161 @@
-# Lesson 5 - More loops
-def calculate_from_1_add_to_10():
-    result = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10
-    return result
+# Lesson 6 - Functions & Loops
 
 
-def calculate_from_1_add_to_5():
-    result = 0
+def add_from_1_plus_to_10():
+    total = 0
 
-    for n in range(1, 6):
-        result = result + n
+    for n in range(1, 11):
+        total = total + n  # 0 + 1 + 2 .. + 10
 
-    return result
-
-
-def calculate_from_1_multi_to_5():
-    result = 1
-
-    for n in range(1, 6):
-        result = result * n
-
-    return result
+    return total
 
 
-def calculate_from_2_add_to_10_only_even():
-    result = 0
+def add_from_1_multiply_to_10():
+    total = 1
 
-    for n in range(1, 6):
-        result = result + n * 2
+    for n in range(1, 11):
+        total = total * n
 
-    return result
-
-
-def calculate_3_multi_6_multi_9_multi_12_multi_15():
-    result = 1
-
-    for n in range(1, 6):
-        result = result * n * 3
-
-    return result
+    return total
 
 
-def calculate_9_9_3_sequence():
-    for n in range(1, 10):
-        # 3
-        # 6
-        # 9
-        # ...
-        number = n * 3
-        print(number)
+def add_from_x_multiply_to_y(x, y):
+    total = 1
+
+    for n in range(x, y + 1):
+        total = total * n
+
+    return total
 
 
-def calculate_9_9_9_full_sentence():
-    # S1 = str(9) + ' * ' + str(1) + " = " + str(9)
-    # S2 = str(9) + ' * ' + str(2) + " = " + str(18)
-    for n in range(1, 10):
-        number = str(9) + " * " + str(n) + " = " + str(9 * n)
-        print(number)
+def add_from_x_plus_to_y(x, y):
+    total = 0
+
+    for n in range(x, y + 1):
+        total = total + n
+
+    return total
 
 
-calculate_9_9_9_full_sentence()
+def add_from_x_concat_to_y(x, y):
+    sentence = ""
+
+    for char in range(x, y + 1):
+        sentence = sentence + str(char)  # "" + "1" + "2" + ... "12345678910"
+
+    return sentence
+
+
+def func_9_9_formula_simple():
+    sentence = ""
+
+    for x in range(2, 10):
+        for y in range(1, 10):
+            # e.g. 2 * 4 = 8
+            sub_sentence = str(x) + " * " + str(y) + " = " + str(x * y) + "\n"
+            sentence = sentence + sub_sentence
+            # "2 * 1 = 2\n"
+            # "2 * 2 = 4\n"
+            # ...
+
+    return sentence
+
+
+def func_19_19_formula_simple():
+    total = ""
+
+    for x in range(2, 20):
+        for y in range(1, 20):
+            partial = str(x) + " * " + str(y) + " = " + str(x * y) + "\n"
+            total = total + partial
+
+    return total
+
+
+def func_n_n_formula_simple(n):
+    total = ""
+
+    for x in range(2, n + 1):
+        for y in range(1, n + 1):
+            partial = str(x) + " * " + str(y) + " = " + str(x * y) + "\n"
+            total = total + partial
+
+    return total
+
+
+def custom_formula(start, end, pretty_print):
+    total = ""
+
+    for x in range(start, end + 1):
+        for y in range(start, end + 1):
+            if pretty_print:
+                partial = str(x) + " * " + str(y) + " = " + str(x * y) + "\n"
+            else:
+                partial = str(x) + "*" + str(y) + "=" + str(x * y) + "\n"
+            total = total + partial
+
+    return total
+
+
+def better_formula(end, except_1):
+    total = ""
+
+    if except_1:
+        for x in range(2, end + 1):
+            for y in range(1, end + 1):
+                partial = str(x) + " * " + str(y) + " = " + str(x * y) + "\n"
+                total = total + partial
+    else:
+        for x in range(1, end + 1):
+            for y in range(1, end + 1):
+                partial = str(x) + " * " + str(y) + " = " + str(x * y) + "\n"
+                total = total + partial
+
+    return total
+
+
+def n_n_n_formula(n, except_1):
+    total = ""
+
+    if except_1:
+        start = 2
+    else:
+        start = 1
+
+    for x in range(start, n + 1):
+        for y in range(1, n + 1):
+            for z in range(1, n + 1):
+                partial = (
+                    str(x)
+                    + " * "
+                    + str(y)
+                    + " * "
+                    + str(z)
+                    + " = "
+                    + str(x * y * z)
+                    + "\n"
+                )
+                total = total + partial
+
+    return total
+
+
+def main():
+    # Ask the user what n does he want?
+    print("What n do you want for n * n * n formula?")
+    n = input()
+    # Ask the user if he want to exclude "1"?
+    print('Do you want to exclude "1"? (y/n)')
+    char = input()
+    if char == "y":
+        except_1 = True
+    else:
+        except_1 = False
+
+    # Calculate the result with our `n_n_n_formula` and the `n`
+    result = n_n_n_formula(n=int(n), except_1=except_1)
+    # Print it
+    print(result)
+
+
+main()

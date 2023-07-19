@@ -27,6 +27,6 @@ def ask_what_is_your_name():
 weight = ask_what_is_your_weight()
 height = ask_what_is_your_height()
 name = ask_what_is_your_name()
-bmi = calculate_bmi(weight=int(weight), height=int(height), name=name)
+bmi = calculate_bmi(weight=int(weight), height=int(height))
 
 print(name + ", you BMI is: " + str(bmi))

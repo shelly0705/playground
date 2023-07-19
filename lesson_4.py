@@ -58,4 +58,5 @@ def calculate_9_9_9_full_sentence():
         print(number)
 
 
-calculate_9_9_9_full_sentence()
+calculate_9_9_3_sequence()
+
