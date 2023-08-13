@@ -1,7 +1,7 @@
 name = "name"
-print(name.title())
-print(name.upper())
-print(name.lower())
+print(name.title()) #Name
+print(name.upper()) #NAME
+print(name.lower()) #name
 
 frist_name = "shelly"
 last_name = "kao"
@@ -12,3 +12,4 @@ print(massage)
 print(name.title() + ":\nkao shelly.".title())
 print(name.title() + ":\tkao shelly.".title())
 print(name.title() + ":\n\tkao shelly.".title())
+#\n 換行, \t空格

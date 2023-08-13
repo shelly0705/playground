@@ -78,6 +78,7 @@ def count_negative(number_list):
 
 print(count_negative([-3, -30, 0, 5, 10]))
 
+
 def count_even_not_cool(number_list):
     count = 0
 

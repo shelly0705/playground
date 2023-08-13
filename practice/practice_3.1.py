@@ -1,8 +1,8 @@
 #sort()永久性依字母順序排列,sort(reverse=True)永久性依字母相反順序排列
 handbags = ['gucci', 'louis vuitton', 'dior', 'bottega veneta']
-handbags.sort()
-handbags.sort(reverse=True)
-print(handbags)
+print(handbags.sort())
+
+print(handbags.sort(reverse=True))
 
 #sorted()暫時性改變排列順序
 print("here is the original list:")

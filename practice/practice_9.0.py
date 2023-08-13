@@ -62,7 +62,7 @@ print(name_3)
 def build_person(first_name, last_name):
     """Return a dictionary of information about a person."""
     person = {'first': first_name, 'last': last_name}
-   
+    return person
 
 name_4 = build_person('shelly'.title(), 'kao'.title())
 print(name_4)

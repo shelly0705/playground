@@ -37,11 +37,11 @@ while polling_active:
     responses[name] = response
 
     #Find out if anyone else is going to take the poll.
-    repeat = input("Would you like to let another person repond? (Yes/ no) ")
+    repeat = input("Would you like to let another person respond? (Yes/ no) ")
     if repeat == 'no':
         polling_active = False
     
     #polling is complete. Show the results.
     print("\n---Poll Results---")
     for name, response in responses.items():
-        print(name + "would like to climb " + response + ".")
+        print(name + " would like to climb " + response + ".")

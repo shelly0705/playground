@@ -17,5 +17,5 @@ age = int(age)
 if age > 18:
     print("you can play!" )
 else:
-    print("sorry,you are too young..")
-    
+    print("sorry,you are too young to play!")
+
