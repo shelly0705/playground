@@ -21,7 +21,6 @@ def calculate_from_1_multi_to_5():
 
     return result
 
-
 def calculate_from_2_add_to_10_only_even():
     result = 0
 

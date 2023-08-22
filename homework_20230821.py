@@ -71,8 +71,19 @@ print_hello_10_times_with_while()  # Hello, Hello, Hello, Hello, Hello, Hello, H
 # Write a function to print all the elements in a list, with while loop.
 # Hint 1: You can use `len(list)` to get the length of a list.
 # Hint 2: You can use `list[i]` to get the i-th element of a list.
+# This kind of operation in programming is called 'to iterate'
+# Iterate:
 def print_list_elements_with_while(list):
-    ...
+    i = 0
+
+    while i < len(list):
+        print(list[i])
+        i = i + 1
+
+    print("Done!")
+
+
+print_list_elements_with_while([2, 3, 4, 4, 5])
 
 
 # Exercise 2:
@@ -80,7 +91,15 @@ def print_list_elements_with_while(list):
 # Then print all the elements.
 # Hint: You can use `input()` to get the input from the user.
 def collect_elements_until_done():
-    ...
+    i = []
+    message = ""
+    while message != "Done":
+        message = input()
+        i.append(message)
+    print(i)
+
+
+# collect_elements_until_done()
 
 
 # Exercise 3:
@@ -104,4 +123,34 @@ def collect_elements_until_done():
 # Hint 3: You should use a while loop to keep the program running.
 # Hint 4: You can use `if ... elif ... else ...` to check the input.
 def shelly_bot():
-    ...
+    print("May I help you?")
+    user_input = ""
+    while user_input != "Bye":
+        user_input = input()
+        if user_input == "Hello":
+            print("Hi!")
+        elif user_input == "What's your name?":
+            print("My name is Shelly")
+        elif user_input == "What's you age?":
+            print("I'm 25 years old")
+        elif user_input == "Bye":
+            print("Good bye")
+        else:
+            print("Sorry, I don't understand")
+
+
+def shelly_bot_v2():
+    print("May I help you?")
+    while True:
+        user_input = input()
+        if user_input == "Hello":
+            print("Hi!")
+        elif user_input == "What's your name?":
+            print("My name is Shelly")
+        elif user_input == "What's you age?":
+            print("I'm 25 years old")
+        elif user_input == "Bye":
+            print("Good bye")
+            break
+        else:
+            print("Sorry, I don't understand")
