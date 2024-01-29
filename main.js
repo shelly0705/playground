@@ -31,83 +31,90 @@ print(isAllOdd([2, 3, 5])); // false; why `3` and `5` aren't printed?
 
 // Practice
 // Make `isEven` and `isAllOdd`, like this:
-
-// function isEven(n) {
-// }
-
-// function isAllEven(numbers) {
-// }
-
-// 2 - practice the above `isAllOdd` and `isAllEven`, but use `forEach`
-
-// function isAllOddUsingForEach(numbers) {
-// }
-
-// function isAllEvenUsingForEach(numbers) {
-// }
-
-// 3 - [HARD!] Use for loop to make a `myForEach` that works similar with `array.forEach`.
-
-// 4 - Practice `array.map`
-// Example:
-
-function adjustScore(score) {
-  if (score >= 50 && score < 60) {
-    return 60;
+function isEven(n) {
+  if (n % 2 == 0) {
+    return true;
   } else {
-    return score;
+    return false;
   }
 }
 
-print(adjustScore(40)); // 40
-print(adjustScore(50)); // 60
-print(adjustScore(70)); // 70
+print(isEven(4));
 
-function adjustScores(scores) {
-  return scores.map(adjustScore);
-}
-
-print(adjustScores([40, 50, 70])); // [40, 60, 70]
-
-// 4.1 - Make a `isScoreQualified` function that:
-// 50 -> false
-// 60 -> true
-// 70 -> true
-
-// function isScoreQualified(score) {
-// }
-
-// 4.2 - Make a `isScoresQualified` function that:
-// [50, 60, 70] -> [false, true, true]
-// Note: you should use `map`
-
-// 5 - [HARD!] make a `isAdjustedScoreQualified` function that:
-// 50 -> true
-// 60 -> true
-// 5.1 - [HARD!] make a `isAdjustedScoresQualified` function
-// [40, 50, 70] -> [false, true, true]
-// Note: you should use `map`
-// Hint: `map` also return an array, that can apply `map` again!
-// For example:
-
-const myArray = [1, 2, 3];
-const myNewArray = myArray.map((n) => n + 1).map((n) => n * 2);
-print(myNewArray); // [4,6,8]
-
-// If all the above is done
-// Try to implement `myMap` with for loop (HARD!)
-// For example:
-
-function myFilter(array, checker) {
-  const newArray = [];
-  for (const item of array) {
-    if (checker(item)) {
-      newArray.push(item);
+function isAllOdd1(array) {
+  for (const n of array) {
+    print(`we are dealing with ${n}`);
+    if (isEven(n)) {
+      return false;
     }
   }
-  return newArray;
+  return true;
 }
 
-const yourArray = [1, 2, 3, 4, 5];
-print(yourArray.filter(isOdd)); // [1, 3, 5]
-print(myFilter(yourArray, isOdd)); // [1, 3, 5]
+print(isAllOdd1([1, 3, 5]))
+print(isAllOdd1([2, 3, 4]))
+
+function isAllEven(numbers) {
+  for (const n of numbers) {
+    print(`we are dealing with ${n}`);
+    if (!isEven(n)){
+      return false;
+    }
+  }
+  return true;
+}
+
+print(isAllEven([1, 3, 5]))
+print(isAllEven([2, 3, 4]))
+
+function isanyEven(array){
+  for (const n of array){
+    print(`we are dealing with ${n}`);
+    if (isEven(n)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+print(isanyEven([1, 3, 5]))
+print(isanyEven([2, 3, 4]))
+
+
+// forEach 不能回傳值
+const array1 = ['a', 'b', 'c'];
+var forEachResult = array1.forEach(function(element){
+  console.log(element + ' is good');
+})
+//for迴圈
+//var i = 0;：初始化一個名為 i 的變數，將其設置為 0。這是迴圈的起始點，
+for(var i = 0; i < array1.length ; i++){
+  console.log(array1[i] + ' is good')
+}
+
+// 2 - practice the above `isAllOdd` and `isAllEven`, but use `forEach`
+//function isAllOddUsingForEach(numbers) {
+// }
+const array2 = [2, 4, 6, 7, 8, 9]
+var IsAllOdd = array2.forEach(function(n){
+  console.log(`we are dealing with ${n}`);
+  if (!isOdd(n)) {
+    console.log(false);
+  }
+  else console.log(true);
+})
+
+ //function isAllEvenUsingForEach(numbers) {
+// }
+var IsAllEven = array2.forEach(function(n){
+  console.log(`we are dealing with ${n}`);
+  if (isOdd(n)) {
+    console.log(false);
+  }
+  else console.log(true);
+})
+  
+
+
+
+// 3 - [HARD!] Use for loop to make a `myForEach` that works similar with `array.forEach`.
