@@ -37,8 +37,8 @@ console.log(newUserInfo);
 //splice(), splice(開始,數量)
 //join()
 
-newBuyList.splice(0,1);
-newBuyList.unshift('pudding');
+newBuyList.splice(0, 1);
+newBuyList.unshift("pudding");
 newBuyList.pop();
 console.log(newBuyList);
 
@@ -49,7 +49,55 @@ delete newUserInfo.favoriteFood;
 console.log(newUserInfo);
 
 const nestedNumbers = [[1], [2]];
+//json不能使用在巢狀子陣列
 const deepCloneNestedNumbers = JSON.parse(JSON.stringify(nestedNumbers));
-numbersCopy[0].push(300);
-console.log(nestedNumbers, numbersCopy);
+deepCloneNestedNumbers[0].push(300);
+console.log(nestedNumbers, deepCloneNestedNumbers);
+
+// Todo 待編輯
+const moonPhase = ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"];
+function moon(phases) {
+  let newMoonPhase = [];
+  for (let i = 0; i < phases.length; i++) {
+    if (phases[i] === "🌕") {
+      newMoonPhase.push("🌕 + 🥮");
+    } else {
+      newMoonPhase.push(phases[i]);
+    }
+  }
+  return newMoonPhase;
+}
+
+console.log(moon(moonPhase));
+//[("🌑", "🌒", "🌓", "🌔", "🌕 + 🥮", "🌖", "🌗", "🌘")];
+
+const foods = ["🍔", "🍜", "🍕", "🍜", "🍔"];
+function countFoods(foods) {
+  let foodCount = {};
+  for (let food of foods) {
+    if (foodCount[food] === undefined) {
+      foodCount[food] = 1;
+    } else {
+      foodCount[food] += 1;
+    }
+  }
+  return foodCount;
+}
+console.log(countFoods(foods));
+
+
+const orderCounts = { '🍔': 2, '🍜': 2, '🍕': 1 };
+function orders(orderCounts) {
+  let orders = [];
+  
+  for (let order in orderCounts) {
+    for (let i = 0; i < orderCounts[order]; i++) {
+      orders.push(order);
+    }
+  }
+  
+  return orders;
+}
+console.log(orders(orderCounts));
+
 
