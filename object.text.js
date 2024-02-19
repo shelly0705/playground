@@ -69,7 +69,7 @@ function moon(phases) {
 }
 
 console.log(moon(moonPhase));
-//[("🌑", "🌒", "🌓", "🌔", "🌕 + 🥮", "🌖", "🌗", "🌘")];
+// ["🌑", "🌒", "🌓", "🌔", "🌕 + 🥮", "🌖", "🌗", "🌘"];
 
 const foods = ["🍔", "🍜", "🍕", "🍜", "🍔"];
 function countFoods(foods) {
@@ -85,19 +85,22 @@ function countFoods(foods) {
 }
 console.log(countFoods(foods));
 
-
-const orderCounts = { '🍔': 2, '🍜': 2, '🍕': 1 };
+const orderCounts = { "🍔": 2, "🍜": 2, "🍕": 1 };
 function orders(orderCounts) {
-  let orders = [];
-  
-  for (let order in orderCounts) {
-    for (let i = 0; i < orderCounts[order]; i++) {
-      orders.push(order);
-    }
+  let ordersArray = [];
+  for (let order of Object.keys(orderCounts)) {
+    ordersArray.push(order);
   }
-  
-  return orders;
+  return ordersArray;
 }
 console.log(orders(orderCounts));
 
+const isOrders = { "🍔": 2, "🍜": 2, "🍕": 1 };
+const ordersArray = Object.entries(isOrders);
+const resultOrders = ordersArray.flatMap(([item, count]) =>
+  Array(count).fill(item)
+);
+console.log(resultOrders);
 
+const uniqueOrders = [...new Set(resultOrders)];
+console.log(uniqueOrders);
